@@ -2,7 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-module.exports = {
+const config: webpack.Configuration = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
@@ -31,3 +31,5 @@ module.exports = {
     },
 
 }
+
+export default config

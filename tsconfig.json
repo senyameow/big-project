@@ -1,13 +1,22 @@
 {
     "compilerOptions": {
         "outDir": "./dist/",
+        // не позволяет не указывать тип переменной (any только если мы напишем :any)
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "ESNext",
         "target": "es5",
         "jsx": "react",
         "allowJs": true,
         "moduleResolution": "node",
+        // обычные импорты без * as
         "allowSyntheticDefaultImports": true,
+        // require -> import
         "esModuleInterop": true
+    },
+    // ts-node does not support any module syntax other than commonjs -> add these lines to get rid of common js =)
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     }
 }
