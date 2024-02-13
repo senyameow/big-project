@@ -1,25 +1,11 @@
-import path from 'path'
-import webpack from 'webpack'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import { buildPlugins } from './config/build/buildPlugins'
-import { buildLoaders } from './config/build/buildLoaders'
-import { buildResolvers } from './config/build/buildResolvers'
+import path from "path";
+import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
+import { Paths } from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-    mode: 'development',
+const paths: Paths = {
     entry: path.resolve(__dirname, 'src', 'index.ts'),
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: "[name].[contenthash].js",
-        clean: true
-    },
-    plugins: buildPlugins(),
-    module: {
-        // обработка файлов, которые выходят за рамки js (png, jpg, gif, svg, css, ts... )
-        rules: buildLoaders()
-    },
-    resolve: buildResolvers()
-
+    html: path.resolve(__dirname, 'public', 'index.html'),
+    build: path.resolve(__dirname, 'build')
 }
 
-export default config
+export default buildWebpackConfig({ mode: 'development', paths })
