@@ -2,6 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { buildPlugins } from './config/build/buildPlugins'
+import { buildLoaders } from './config/build/buildLoaders'
 
 const config: webpack.Configuration = {
     mode: 'development',
@@ -14,15 +15,7 @@ const config: webpack.Configuration = {
     plugins: buildPlugins(),
     module: {
         // обработка файлов, которые выходят за рамки js (png, jpg, gif, svg, css, ts... )
-        rules: [
-            {
-                // файлы, которые надо пропустить через этот лоадер
-                test: /\.tsx?$/, // обрабатывает файлы как ts так и tsx (регулярка их ловит)
-                // loader, который позволяет работать tsу
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
+        rules: buildLoaders()
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
