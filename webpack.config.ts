@@ -3,6 +3,7 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { buildPlugins } from './config/build/buildPlugins'
 import { buildLoaders } from './config/build/buildLoaders'
+import { buildResolvers } from './config/build/buildResolvers'
 
 const config: webpack.Configuration = {
     mode: 'development',
@@ -17,9 +18,7 @@ const config: webpack.Configuration = {
         // обработка файлов, которые выходят за рамки js (png, jpg, gif, svg, css, ts... )
         rules: buildLoaders()
     },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
+    resolve: buildResolvers()
 
 }
 

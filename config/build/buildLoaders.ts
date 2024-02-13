@@ -1,5 +1,5 @@
-import webpack from 'webpack'
-export const buildLoaders = (): webpack.RuleSetRule[] => {
+import { RuleSetRule } from 'webpack'
+export const buildLoaders = (): RuleSetRule[] => {
     // порядок, в котором лоадеры указаны в массиве ИМЕЕТ ЗНАЧЕНИЕ
     // лучше выносить их в отдельные переменные
 
