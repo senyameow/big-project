@@ -10,4 +10,5 @@ export interface Paths {
 export interface BuildOptions {
     mode: Mode
     paths: Paths
+    port: number
 }

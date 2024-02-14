@@ -8,4 +8,6 @@ const paths: Paths = {
     build: path.resolve(__dirname, 'build')
 }
 
-export default buildWebpackConfig({ mode: 'development', paths })
+const port = 3000
+
+export default buildWebpackConfig({ mode: 'development', paths, port })
