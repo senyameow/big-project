@@ -22,6 +22,8 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
             // обработка файлов, которые выходят за рамки js (png, jpg, gif, svg, css, ts... )
             rules: buildLoaders()
         },
-        resolve: buildResolvers()
+        resolve: buildResolvers(),
+        devtool: 'inline-source-map',
+
     }
 }
