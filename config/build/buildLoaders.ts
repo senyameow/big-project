@@ -1,6 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { RuleSetRule } from 'webpack'
-export const buildLoaders = (): RuleSetRule[] => {
+import { BuildOptions } from './types/config'
+export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     // порядок, в котором лоадеры указаны в массиве ИМЕЕТ ЗНАЧЕНИЕ
     // лучше выносить их в отдельные переменные
 
@@ -16,9 +17,14 @@ export const buildLoaders = (): RuleSetRule[] => {
         test: /\.s[ac]ss$/i,
         use: [
             // Creates `style` nodes from JS strings
-            MiniCssExtractPlugin.loader,
+            options.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
             // Translates CSS into CommonJS
-            "css-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: true
+                }
+            },
             // Compiles Sass to CSS
             "sass-loader",
         ],
