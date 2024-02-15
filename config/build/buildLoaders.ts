@@ -22,8 +22,11 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
             {
                 loader: "css-loader",
                 options: {
-                    modules: true,
-                    auto: (path: string) => path.includes('.module.') ? true : false,
+                    modules: {
+                        auto: (path: string) => path.includes('.module.') ? true : false,
+                        localIdentName: options.mode === 'development' ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:5]'
+                    },
+
                 }
             },
             // Compiles Sass to CSS
