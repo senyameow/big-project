@@ -8,8 +8,10 @@ const App = () => {
     return (
 
         <div className='app'>
-            qwe
-            <Link to={'/'} />
+            <div className='links'>
+                <Link to={'/'}>main page</Link>
+                <Link to={'/about'}>about page</Link>
+            </div>
             <Routes>
                 <Route path={'/about'} element={<AboutPage />} />
                 <Route path={'/'} element={<MainPage />} />
