@@ -1,5 +1,5 @@
 import './index.scss'
-import { Route, Router, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import AboutPage from './pages/AboutPage/AboutPage'
 import MainPage from './pages/MainPage/MainPage'
 import { Link } from 'react-router-dom'
