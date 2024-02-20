@@ -15,11 +15,9 @@ const App = () => {
 
     return (
 
-        <div className={`app ${theme}`}>
-            <div className='links'>
-                <Link to={'/'}>main page</Link>
-                <Link to={'/about'}>about page</Link>
-            </div>
+        <div className={`app dark`}>
+            <Link to={'/'}>main page</Link>
+            <Link to={'/about'}>about page</Link>
             <Routes>
                 <Route path={'/about'} element={<Suspense fallback={<div>LOADING ABOUT...</div>}><AboutPageChunk /></Suspense>} />
                 <Route path={'/'} element={<Suspense fallback={<div>LOADING MAIN...</div>}><MainPageChunk /></Suspense>} />
