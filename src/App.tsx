@@ -2,20 +2,16 @@ import './styles/index.scss'
 import { Route, Routes, Link } from 'react-router-dom'
 import { AboutPageChunk } from './pages/AboutPage/AboutPage.async'
 import { MainPageChunk } from './pages/MainPage/MainPage.async'
-import { Suspense, useState } from 'react'
-
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
+import { Suspense, useContext } from 'react'
+import { ThemeContext } from './theme/ThemeContext'
 
 const App = () => {
 
-    const [theme, setTheme] = useState<Theme>(Theme.DARK)
+    const { theme, setTheme } = useContext(ThemeContext)
 
     return (
 
-        <div className={`app dark`}>
+        <div className={`app ${theme}`}>
             <Link to={'/'}>main page</Link>
             <Link to={'/about'}>about page</Link>
             <Routes>
