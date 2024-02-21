@@ -7,8 +7,6 @@ import { ThemeContext } from './theme/ThemeContext'
 
 const App = () => {
 
-    const { theme, setTheme } = useContext(ThemeContext)
-
     return (
 
         <div className={`app ${theme}`}>
