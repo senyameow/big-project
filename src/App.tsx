@@ -3,9 +3,11 @@ import { Route, Routes, Link } from 'react-router-dom'
 import { AboutPageChunk } from './pages/AboutPage/AboutPage.async'
 import { MainPageChunk } from './pages/MainPage/MainPage.async'
 import { Suspense, useContext } from 'react'
-import { ThemeContext } from './theme/ThemeContext'
+import { useTheme } from './theme/useTheme'
 
 const App = () => {
+
+    const { theme } = useTheme()
 
     return (
 

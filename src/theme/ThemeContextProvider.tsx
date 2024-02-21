@@ -3,18 +3,14 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext'
 
 const defaulTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK // явное приведение к типу Theme (т.к. стор отдает строку)
 
-
 const ThemeContextProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaulTheme)
 
     // будем использовать мемо, чтобы не пересоздавался компонент, пока не изменятся зависимости
-    const toggleTheme = () => {
-        setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
-    }
 
     const defaultValue = useMemo(() => ({
         theme,
-        toggleTheme,
+        setTheme,
     }), [theme])
 
     return (
