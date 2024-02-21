@@ -7,11 +7,14 @@ import { useTheme } from './theme/useTheme'
 
 const App = () => {
 
-    const { theme } = useTheme()
+    const { theme, toggleTheme } = useTheme()
 
     return (
 
         <div className={`app ${theme}`}>
+            <div>
+                <button onClick={toggleTheme}>toggle</button>
+            </div>
             <Link to={'/'}>main page</Link>
             <Link to={'/about'}>about page</Link>
             <Routes>
