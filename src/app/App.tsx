@@ -1,9 +1,7 @@
 import './styles/index.scss'
-import { Route, Routes, Link } from 'react-router-dom'
-import { Suspense } from 'react'
+import { Link } from 'react-router-dom'
 import { useTheme } from './providers/ThemeProvider/lib/useTheme'
-import { AboutPage } from 'pages/AboutPage'
-import { MainPage } from 'pages/MainPage'
+import { AppRouter } from './providers/router'
 
 const App = () => {
 
@@ -12,15 +10,10 @@ const App = () => {
     return (
 
         <div className={`app ${theme}`}>
-            <div>
-                <button onClick={toggleTheme}>toggle</button>
-            </div>
+            <button onClick={toggleTheme}>toggle</button>
             <Link to={'/'}>main page</Link>
             <Link to={'/about'}>about page</Link>
-            <Routes>
-                <Route path={'/about'} element={<Suspense fallback={<div>LOADING ABOUT...</div>}><AboutPage /></Suspense>} />
-                <Route path={'/'} element={<Suspense fallback={<div>LOADING MAIN...</div>}><MainPage /></Suspense>} />
-            </Routes>
+            <AppRouter />
         </div>
 
     )
