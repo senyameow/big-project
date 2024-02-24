@@ -1,9 +1,9 @@
 import './styles/index.scss'
 import { Route, Routes, Link } from 'react-router-dom'
-import { Suspense, useContext } from 'react'
+import { Suspense } from 'react'
 import { useTheme } from './providers/ThemeProvider/lib/useTheme'
-import { AboutPageChunk } from 'pages/AboutPage/AboutPage.async'
-import { MainPageChunk } from 'pages/MainPage/MainPage.async'
+import { AboutPage } from 'pages/AboutPage'
+import { MainPage } from 'pages/MainPage'
 
 const App = () => {
 
@@ -18,8 +18,8 @@ const App = () => {
             <Link to={'/'}>main page</Link>
             <Link to={'/about'}>about page</Link>
             <Routes>
-                <Route path={'/about'} element={<Suspense fallback={<div>LOADING ABOUT...</div>}><AboutPageChunk /></Suspense>} />
-                <Route path={'/'} element={<Suspense fallback={<div>LOADING MAIN...</div>}><MainPageChunk /></Suspense>} />
+                <Route path={'/about'} element={<Suspense fallback={<div>LOADING ABOUT...</div>}><AboutPage /></Suspense>} />
+                <Route path={'/'} element={<Suspense fallback={<div>LOADING MAIN...</div>}><MainPage /></Suspense>} />
             </Routes>
         </div>
 
