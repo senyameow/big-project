@@ -1,7 +1,7 @@
 import './styles/index.scss'
-import { Link } from 'react-router-dom'
 import { useTheme } from './providers/ThemeProvider/lib/useTheme'
 import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/Navbar'
 
 const App = () => {
 
@@ -9,9 +9,7 @@ const App = () => {
 
     return (
         <div className={`app ${theme}`}>
-            <button onClick={toggleTheme}>toggle</button>
-            <Link to={'/'}>main page</Link>
-            <Link to={'/about'}>about page</Link>
+            <Navbar />
             <AppRouter />
         </div>
     )
