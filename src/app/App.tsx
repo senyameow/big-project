@@ -1,9 +1,9 @@
 import './styles/index.scss'
 import { Route, Routes, Link } from 'react-router-dom'
-import { AboutPageChunk } from './pages/AboutPage/AboutPage.async'
-import { MainPageChunk } from './pages/MainPage/MainPage.async'
 import { Suspense, useContext } from 'react'
-import { useTheme } from './theme/useTheme'
+import { useTheme } from './providers/ThemeProvider/lib/useTheme'
+import { AboutPageChunk } from 'pages/AboutPage/AboutPage.async'
+import { MainPageChunk } from 'pages/MainPage/MainPage.async'
 
 const App = () => {
 

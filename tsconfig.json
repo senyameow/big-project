@@ -11,7 +11,13 @@
         // обычные импорты без * as
         "allowSyntheticDefaultImports": true,
         // require -> import
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./src/*"
+            ]
+        }
     },
     // ts-node does not support any module syntax other than commonjs -> add these lines to get rid of common js =)
     "ts-node": {
