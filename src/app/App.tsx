@@ -11,6 +11,7 @@ const App = () => {
         <div className={`app ${theme}`}>
             <Navbar />
             <AppRouter />
+            <button onClick={toggleTheme}>toggle</button>
         </div>
     )
 }
