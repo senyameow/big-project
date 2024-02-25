@@ -1,10 +1,13 @@
 import { cn } from "shared/lib/cn/cn"
 import cls from './Navbar.module.scss'
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { Anchor } from 'antd'
+
 
 interface NavbarProps {
     className?: string;
 }
+
 
 export const Navbar = ({
     className,
@@ -15,8 +18,8 @@ export const Navbar = ({
                 Navbar
             </div>
             <div className={cn(cls.links)}>
-                <AppLink to={'/'} >main</AppLink>
-                <AppLink to={'/about'} >About</AppLink>
+                <AppLink theme={AppLinkTheme.SECONDARY} to={'/'} >main</AppLink>
+                <AppLink theme={AppLinkTheme.SECONDARY} to={'/about'} >About</AppLink>
             </div>
         </div>
     )
