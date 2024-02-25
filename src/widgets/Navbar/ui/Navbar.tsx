@@ -1,7 +1,6 @@
 import { cn } from "shared/lib/cn/cn"
 import cls from './Navbar.module.scss'
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { Anchor } from 'antd'
 
 
 interface NavbarProps {
