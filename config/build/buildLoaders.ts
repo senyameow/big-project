@@ -51,7 +51,7 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     return [
         tsLoader,
         sassLoader,
-        svgLoader,
         fileLoader,
+        svgLoader,
     ]
 }
