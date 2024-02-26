@@ -1,9 +1,8 @@
 import { cn } from 'shared/lib/cn/cn'
 import cls from './ThemeSwitcher.module.scss'
-import { useTheme } from 'app/providers/ThemeProvider';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import Light from 'shared/assets/icons/theme-light.svg'
 import Dark from 'shared/assets/icons/theme-dark.svg'
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 interface ThemeSwitcherProps {
     className?: string;
