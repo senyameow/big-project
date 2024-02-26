@@ -13,6 +13,11 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
         exclude: /node_modules/,
     }
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
     const sassLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -35,6 +40,7 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     }
 
     return [
+        svgLoader,
         tsLoader,
         sassLoader,
     ]
