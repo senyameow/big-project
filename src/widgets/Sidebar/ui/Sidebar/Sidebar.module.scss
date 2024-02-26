@@ -1,0 +1,10 @@
+.Sidebar {
+    width: 100px;
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--inverted-bg-color);
+
+}
+
+.collapsed {
+    display: none;
+}
