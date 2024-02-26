@@ -19,6 +19,9 @@
             ]
         }
     },
+    "typeRoots": [
+        "./src/app/types",
+    ],
     // ts-node does not support any module syntax other than commonjs -> add these lines to get rid of common js =)
     "ts-node": {
         "compilerOptions": {
