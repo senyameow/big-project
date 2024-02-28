@@ -3,6 +3,8 @@ import { useTheme } from './providers/ThemeProvider/lib/useTheme'
 import { AppRouter } from './providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
+import { Suspense } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const App = () => {
 
@@ -10,11 +12,13 @@ const App = () => {
 
     return (
         <div className={`app ${theme}`}>
-            <Navbar />
-            <div className='content'>
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback=''>
+                <Navbar />
+                <div className='content'>
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     )
 }
