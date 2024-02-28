@@ -1,7 +1,6 @@
 import { cn } from "shared/lib/cn/cn"
 import cls from './Navbar.module.scss'
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 
 interface NavbarProps {
@@ -14,7 +13,6 @@ export const Navbar = ({
 }: NavbarProps) => {
     return (
         <div className={cn(cls.Navbar, {}, [className])}>
-            <ThemeSwitcher className="" />
             <div>
                 Navbar
             </div>
