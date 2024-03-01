@@ -1,1 +1,1 @@
-export { MainPageChunk as MainPage } from "./ui/MainPage.async";
+export { MainPageChunk as MainPage } from './ui/MainPage.async'

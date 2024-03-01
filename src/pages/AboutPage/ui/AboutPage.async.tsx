@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import { lazy } from 'react'
 
-export const AboutPageChunk = lazy(() => import('./AboutPage'))
+export const AboutPageChunk = lazy(async () => await import('./AboutPage'))
