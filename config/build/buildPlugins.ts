@@ -1,5 +1,5 @@
 import HtmlWebpackPlugin from "html-webpack-plugin"
-import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack"
+import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from "webpack"
 import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
@@ -13,6 +13,7 @@ export const buildPlugins = ({ paths, mode }: BuildOptions): WebpackPluginInstan
         }),
         new DefinePlugin({
             PRODUCTION: JSON.stringify(mode === 'production' ? true : false)
-        })
+        }),
+        new HotModuleReplacementPlugin()
     ]
 }
