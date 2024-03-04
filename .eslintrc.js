@@ -36,7 +36,8 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
-        "i18next/no-literal-string": ['error', {markupOnly: true}]
+        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "import/no-absolute-path": 'off'
 
     },
     "globals": {
