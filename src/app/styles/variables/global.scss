@@ -1,16 +1,13 @@
 :root {
-    --font-family-main: "Roboto", Georgia, "Times New Roman", Times, serif;
+  --font-family-main: "Roboto", georgia, "Times New Roman", times, serif;
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-size-l: 24px;
+  --font-line-l: 32px;
 
-    --font-size-m: 16px;
-    --font-line-m: 24px;
+  // размеры
 
-    --font-size-l: 24px;
-    --font-line-l: 32px;
-
-    // размеры
-
-    --navbar-height: 60px;
-
-    --sidebar-width: 200px;
-    --sidebar-width-collapsed: 70px;
+  --navbar-height: 60px;
+  --sidebar-width: 200px;
+  --sidebar-width-collapsed: 70px;
 }
