@@ -6,6 +6,7 @@ module.exports = {
     "extends": [
         "standard-with-typescript",
         "plugin:react/jsx-runtime",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
@@ -25,7 +26,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "@typescript-eslint/strict-boolean-expressions": 0,
@@ -34,6 +36,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
+        "i18next/no-literal-string": ['error', {markupOnly: true}]
 
     },
     "globals": {
