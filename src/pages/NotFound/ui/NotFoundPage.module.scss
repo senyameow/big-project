@@ -1,0 +1,9 @@
+.NotFoundPage {
+    --not-found-size: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--not-found-size);
+    height: 100%;
+}

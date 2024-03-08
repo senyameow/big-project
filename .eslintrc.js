@@ -31,10 +31,12 @@ module.exports = {
         "i18next"
     ],
     "rules": {
+        "indent": "off",
+        "@typescript-eslint/indent": 'off',
         "@typescript-eslint/strict-boolean-expressions": 0,
         "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/prefer-nullish-coalescing": 0,
-        'react/jsx-indent': [2, 4],
+        'react/jsx-indent': 0,
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
         "i18next/no-literal-string": ['error', { markupOnly: true }],
