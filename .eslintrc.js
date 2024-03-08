@@ -21,10 +21,11 @@ module.exports = {
             }
         }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
+    parserOptions: {
+        parser: '@typescript-eslint/parser',
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
+      },
     "plugins": [
         "react",
         "i18next"
@@ -36,7 +37,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
-        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "i18next/no-literal-string": ['error', { markupOnly: true }],
         "import/no-absolute-path": 'off'
 
     },
