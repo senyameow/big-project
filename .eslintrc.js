@@ -40,7 +40,9 @@ module.exports = {
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
         "i18next/no-literal-string": ['error', { markupOnly: true }],
-        "import/no-absolute-path": 'off'
+        "import/no-absolute-path": 'off',
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": "off"
 
     },
     "globals": {
