@@ -42,7 +42,10 @@ module.exports = {
         "i18next/no-literal-string": ['error', { markupOnly: true }],
         "import/no-absolute-path": 'off',
         "comma-dangle": "off",
-        "@typescript-eslint/comma-dangle": "off"
+        "@typescript-eslint/comma-dangle": "off",
+        'n/handle-callback-err': 'off',
+        "@typescript-eslint/member-delimiter-style": "off",
+        'no-trailing-spaces': 'off'
 
     },
     "globals": {
