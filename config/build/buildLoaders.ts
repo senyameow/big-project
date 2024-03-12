@@ -27,6 +27,20 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     ]
   }
 
+  const babelLoader = {
+    test: /\.(?:js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-typescript'
+        ]
+      }
+    }
+  }
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -49,9 +63,10 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   }
 
   return [
+    babelLoader,
     tsLoader,
     sassLoader,
     fileLoader,
-    svgLoader
+    svgLoader,
   ]
 }

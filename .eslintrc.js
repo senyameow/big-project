@@ -45,7 +45,8 @@ module.exports = {
         "@typescript-eslint/comma-dangle": "off",
         'n/handle-callback-err': 'off',
         "@typescript-eslint/member-delimiter-style": "off",
-        'no-trailing-spaces': 'off'
+        'no-trailing-spaces': 'off',
+        "@typescript-eslint/semi": "off"
 
     },
     "globals": {
