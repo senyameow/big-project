@@ -20,7 +20,8 @@ const config = {
   rootDir: '../../',
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-  ]
+  ],
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -135,7 +136,6 @@ const config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
