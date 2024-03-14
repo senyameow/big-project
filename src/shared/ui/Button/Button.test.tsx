@@ -4,6 +4,6 @@ import { Button, ButtonTheme } from './Button'
 describe('button', () => {
     test('render', () => {
         render(<Button theme={ButtonTheme.CLEAR}>test</Button>);
-        expect(screen.getByText('test')).
+        expect(screen.getByText('test')).toBeInTheDocument();
     })
 })
