@@ -1,3 +1,5 @@
+import path from "path"
+
 const config = {
   testEnvironment: 'jsdom',
   clearMocks: true,
@@ -25,7 +27,9 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   moduleNameMapper: {
     '\\.(scss)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx') // маппер, который для свг будет создавать пустой див
   },
+  
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -172,7 +176,7 @@ const config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
