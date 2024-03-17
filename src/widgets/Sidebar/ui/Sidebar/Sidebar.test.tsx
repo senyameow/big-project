@@ -5,7 +5,7 @@ import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/re
 describe('Sidber', () => {
     test('render', () => {
         renderWithTranslation(<Sidebar />)
-        expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+        expect(screen.getByTestId('')).toBeInTheDocument()
     })
 
     test('render', () => {
