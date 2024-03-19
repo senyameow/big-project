@@ -6,7 +6,8 @@ module.exports = {
     "extends": [
         "standard-with-typescript",
         "plugin:react/jsx-runtime",
-        "plugin:i18next/recommended"
+        "plugin:i18next/recommended",
+        "plugin:storybook/recommended"
     ],
     "overrides": [
         {
