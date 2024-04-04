@@ -1,6 +1,7 @@
 import { cn } from 'shared/lib/cn/cn'
 import cls from './Navbar.module.scss'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 interface NavbarProps {
   className?: string
@@ -12,7 +13,7 @@ export const Navbar = ({
   return (
       <div className={cn(cls.Navbar, {}, [className])}>
           <div>
-              Navbar
+              <Button theme={ButtonTheme.OUTLINED} >qweqwe</Button>
           </div>
           <div className={cn(cls.links)}>
               <AppLink theme={AppLinkTheme.SECONDARY} to={'/'} >main</AppLink>

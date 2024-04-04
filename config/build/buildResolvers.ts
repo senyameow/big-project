@@ -5,8 +5,7 @@ export const buildResolvers = (options: BuildOptions): ResolveOptions => {
   return {
     extensions: ['.tsx', '.ts', '.js'],
     modules: [
-      // path.resolve(__dirname, 'src') так не надо, принимаем путь из опций
-      options.paths.src, 'node_modules'
+      options.paths.src, 'node_modules',
     ],
     mainFiles: ['index'],
     alias: {},
