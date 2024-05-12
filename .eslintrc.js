@@ -36,6 +36,7 @@ module.exports = {
         "@typescript-eslint/strict-boolean-expressions": 0,
         "@typescript-eslint/explicit-function-return-type": 0,
         "@typescript-eslint/prefer-nullish-coalescing": 0,
+        "@typescript-eslint/no-unused-vars": 0,
         'react/jsx-indent': 0,
         "no-useless-escape": 'off',
         "@typescript-eslint/no-floating-promises": 0,
