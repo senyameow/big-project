@@ -5,6 +5,8 @@ import React from 'react';
 import 'app/styles/themes/dark.scss'
 import 'app/styles/themes/light.scss'
 import 'app/styles/index.scss'
+import { ThemeDecorator } from 'shared/config/storybook/themeDecorator/themeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 
 const meta = {
   title: 'shared/Button',
@@ -34,3 +36,12 @@ export const Outlined: Story = {
     theme: ButtonTheme.OUTLINED
   },
 };
+export const OutlinedDark: Story = {
+  args: {
+    children: 'йцу',
+    theme: ButtonTheme.OUTLINED
+  },
+};
+OutlinedDark.decorators = [
+  (Story) => ThemeDecorator(Theme.DARK)(Story)
+]

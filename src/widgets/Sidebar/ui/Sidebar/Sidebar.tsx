@@ -2,7 +2,7 @@ import { cn } from 'shared/lib/cn/cn'
 import cls from './Sidebar.module.scss'
 import { useState } from 'react'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
-import { LangSwitcher } from 'shared/LangSwitcher/LangSwitcher'
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 
 interface SidebarProps {
   className?: string

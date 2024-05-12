@@ -2,6 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { type RuleSetRule } from 'webpack'
 import { type BuildOptions } from './types/config'
 import { buildSaasLoader } from './loaders/buildScssLoader'
+import { buildBabelLoader } from './loaders/buildBabelLoader'
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   // порядок, в котором лоадеры указаны в массиве ИМЕЕТ ЗНАЧЕНИЕ
   // лучше выносить их в отдельные переменные
@@ -28,20 +29,8 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     ]
   }
 
-  const babelLoader = {
-    test: /\.(?:js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          '@babel/preset-env',
-          '@babel/preset-typescript'
-        ]
-      }
-    }
-  }
-
+  
+  const babelLoader = buildBabelLoader()
   const sassLoader = buildSaasLoader(options.mode)
 
   return [

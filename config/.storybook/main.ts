@@ -2,6 +2,8 @@ import type { StorybookConfig } from "@storybook/react-webpack5";
 import { Paths } from "../build/types/config";
 import path from "path";
 import { buildSaasLoader } from "../build/loaders/buildScssLoader";
+import { RuleSetRule } from "webpack";
+import { buildBabelLoader } from "../build/loaders/buildBabelLoader";
 
 const config: StorybookConfig = {
   stories: ["../../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -13,6 +15,7 @@ const config: StorybookConfig = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
   ],
+
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
@@ -33,7 +36,25 @@ const config: StorybookConfig = {
     config.resolve?.modules?.push(paths.src)
     config.resolve?.extensions?.push('.tsx', '.ts')
 
-    config.module?.rules?.push(buildSaasLoader('development'))
+    config.module?.rules?.push(buildSaasLoader('development'), buildBabelLoader())
+
+
+    if ((config.module?.rules) !== undefined) {
+      config.module.rules = config.module.rules.map((rule: RuleSetRule | '...') => {
+        if (rule !== '...' && rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
+          return { ...rule, exclude: /\.svg$/i }
+        }
+        return rule
+      }
+      )
+      config.module.rules.push({
+        test: /\.svg$/i,
+        use: ['@svgr/webpack']
+      })
+    }
+
+
+
 
     return config
   }
